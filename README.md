@@ -2,7 +2,7 @@
 
 # Calorie Tracker/BMR
 
-#Algorithm 
+# Algorithm 
 
 ### BMR Calculation Algorithm
 
