@@ -23,42 +23,43 @@ public class CalorieTrackerCLI {
             System.out.print("Choose an option: ");
             int choice = Integer.parseInt(scanner.nextLine());
 
-            switch (choice) {
-                case 1 -> calculateBMR();
-                case 2 -> logMeal();
-                case 3 -> viewHistory();
-                case 4 -> {
-                    running = false;
-                    System.out.println("Goodbye!");
-                }
-                default -> System.out.println("Invalid option. Please try again.");
+            if (choice == 1) {
+                calculateBMR();
+            } else if (choice == 2) {
+                logMeal();
+            } else if (choice == 3) {
+                viewHistory();
+            } else if (choice == 4) {
+                running = false;
+                System.out.println("Goodbye!");
+            } else {
+                System.out.println("Invalid option. Please try again.");
             }
         }
     }
 
     private static void enterUserInfo() {
-    System.out.print("Enter your name: ");
-    String name = scanner.nextLine();
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
 
-    System.out.print("Enter your age: ");
-    int age = Integer.parseInt(scanner.nextLine());
+        System.out.print("Enter your age: ");
+        int age = Integer.parseInt(scanner.nextLine());
 
-    System.out.print("Enter your weight (pounds): ");
-    double weightPounds = Double.parseDouble(scanner.nextLine());
-    double weightKg = weightPounds * 0.453592; 
+        System.out.print("Enter your weight (pounds): ");
+        double weightPounds = Double.parseDouble(scanner.nextLine());
+        double weightKg = weightPounds * 0.453592; 
 
-    System.out.print("Enter your height (cm): ");
-    double height = Double.parseDouble(scanner.nextLine());
+        System.out.print("Enter your height (cm): ");
+        double height = Double.parseDouble(scanner.nextLine());
 
-    System.out.print("Enter your gender (Male/Female): ");
-    String gender = scanner.nextLine();
+        System.out.print("Enter your gender (Male/Female): ");
+        String gender = scanner.nextLine();
 
-    System.out.print("Enter your activity level (Sedentary, Light, Moderate, Active, Very Active): ");
-    String activityLevel = scanner.nextLine();
+        System.out.print("Enter your activity level (Sedentary, Light, Moderate, Active, Very Active): ");
+        String activityLevel = scanner.nextLine();
 
-    user = new User(name, age, weightKg, height, gender, activityLevel);
+        user = new User(name, age, weightKg, height, gender, activityLevel);
     }
-
 
     private static void calculateBMR() {
         double bmr = user.calculateBMR();
